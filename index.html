@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Classic Calculator</title>
+</head>
+
+<body>
+
+  <div id="screen">
+    <input type="text" id="screenInput">
+  </div>
+  <div id="buttons">
+    <button class=" btn-clear" data-num="C">C</button>
+    <button class="btn btn-op" data-num="+">+</button>
+    <button class="btn btn-op" data-num="%">%</button>
+    <button class="btn btn-op" data-num="/">/</button>
+    <button class="btn" data-num="7">7</button>
+    <button class="btn" data-num="8">8</button>
+    <button class="btn" data-num="9">9</button>
+    <button class="btn btn-op" data-num="*">x</button>
+    <button class="btn" data-num="4">4</button>
+    <button class="btn" data-num="5">5</button>
+    <button class="btn" data-num="6">6</button>
+    <button class="btn btn-op" data-num="-">-</button>
+    <button class="btn" data-num="1">1</button>
+    <button class="btn" data-num="2">2</button>
+    <button class="btn" data-num="3">3</button>
+    <button class="btn btn-op" data-num="#">#</button>
+    <button class="btn " data-num="00">00</button>
+    <button class="btn " data-num="0">0</button>
+    <button class="btn " data-num=".">.</button>
+    <button class=" btn-equal" data-num="=">=</button>
+  </div>
+
+
+  <script>
+    //Get elements
+    const screen = document.getElementById("screenInput");
+    const buttons = document.querySelectorAll(".btn");
+    const btnClear = document.querySelector(".btn-clear");
+    const btnEqual = document.querySelector(".btn-equal");
+    //push btn on screen
+    buttons.forEach(btn => btn.addEventListener("click", (e) => {
+      const btnClick = e.target.getAttribute("data-num");
+      screen.value += btnClick;
+    }))
+    //Clear screen
+    btnClear.addEventListener("click", () => {
+      screen.value = "";
+    })
+    //evaluate screen
+    btnEqual.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (screen.value) {
+        const result = eval(screen.value);
+        screen.value = result;
+      }
+    })
+  </script>
+</body>
+
+</html>
