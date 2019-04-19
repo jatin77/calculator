@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: grid;
+  height: 100vh;
+  width: 100%;
+  background: #000;
+}
+/*Screen*/
+#screen {
+  height: 20vh;
+}
+#screen input {
+  width: 80%;
+  margin: auto;
+  display: block;
+  height: 100%;
+  font-size: 3rem;
+  background: #000;
+  text-align: right;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #696969;
+  color: #f8f8ff;
+}
+/*buttons*/
+#buttons {
+  height: 80vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+#buttons button:active {
+  font-size: 1.6rem;
+  height: 50px;
+  width: 50px;
+  outline: none;
+}
+#buttons button:focus {
+  outline: none;
+}
+#buttons .btn {
+  background: transparent;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  outline: none;
+  color: #f8f8ff;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  font-size: 2rem;
+}
+#buttons .btn-op {
+  background: #1a1a1a;
+  border: none;
+}
+/*Button Clear & Equal*/
+#buttons .btn-clear {
+  background: crimson;
+}
+#buttons .btn-equal {
+  background: #1e90ff;
+}
+#buttons .btn-clear,
+#buttons .btn-equal {
+  border: none;
+  color: #f8f8ff;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 2rem;
+}
+/*Media Queries*/
+@media (max-height: 450px) {
+  #buttons .btn-clear,
+  #buttons .btn-equal {
+    border: none;
+    color: #f8f8ff;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.3rem;
+  }
+  #buttons .btn {
+    background: transparent;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    color: #f8f8ff;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.3rem;
+  }
+  #buttons button:active {
+    font-size: 1rem;
+    height: 30px;
+    width: 30px;
+    outline: none;
+  }
+  #screen input {
+    width: 80%;
+    margin: auto;
+    display: block;
+    height: 100%;
+    font-size: 1.3rem;
+    background: #000;
+    text-align: right;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #696969;
+    color: #f8f8ff;
+  }
+}
